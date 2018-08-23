@@ -1,0 +1,9 @@
+<div> 
+    <h1> <%= @instructor.first_name %> <%= @instructor.last_name %> </h1> <h3> (<%= @instructor.age %> years old) </h3>
+    <img src="<%= @instructor.pic %>">
+</div>
+<div>
+    <h3><%= @instructor_cohort.name %> </h3>
+    <h3>Highest Level of Education: <%= @instructor.education %> </h3>
+    <h3>Salary: $<%= @instructor.salary %> </h3>
+</div>
