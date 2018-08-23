@@ -1,4 +1,17 @@
-<% @students.each do |student_info| %>
-    <h1> <%= student_info.last_name %></h1>
-    <h1> <%= student_info.first_name %></h1>
+<h1>Student Roster</h1>
+<table>
+    <tr>
+        <th> Last Name </th>
+        <th> First Name </th> 
+        <th> Age </th>
+        <th> Cohort </th>
+    </tr>
+    <tr>
+        <% @students.order('last_name ASC').each do |student_info| %>
+            <td> <%= student_info.last_name %> </td>
+            <td> <%= student_info.first_name %> </td>
+            <td> <%= student_info.age %> </td>
+            <td> <%= student_info.cohort_id %> <td>
+    </tr>
+</table>
 <% end %>
