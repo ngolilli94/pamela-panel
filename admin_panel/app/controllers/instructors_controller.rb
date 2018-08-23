@@ -4,7 +4,7 @@ class InstructorsController < ApplicationController
     end
 
     def show
-
+        @instructor = Instructor.find(params[:id])
     end
     
     def new
@@ -12,14 +12,20 @@ class InstructorsController < ApplicationController
     end
 
     def create
-            
+        Instructor.create(instructor_params)  
     end
     
     def edit
-
+        @instructor = Instructor.find(params[:id])
     end
 
     def update
-
+        @instructor = Instructor.find(params[:id])
+        @instructor.update(instructor_params)
     end
+end
+
+private
+def instructor_params
+    params.require(:instructor).permit(:first_name,:last_name,:age,:salary,:education, :pic)
 end
