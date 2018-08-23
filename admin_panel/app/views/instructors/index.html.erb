@@ -1,0 +1,14 @@
+<h1>Instructors</h1>
+<table>
+    <tr>
+        <th> Last Name </th>
+        <th> First Name </th> 
+        <th> Cohort </th>
+    </tr>
+    <tr>
+        <% @instructors.order('last_name ASC').each do |instructor_info| %>
+            <td> <%= instructor_info.last_name %> </td>
+            <td> <%= instructor_info.first_name %> </td>
+    </tr>
+</table>
+<% end %>
