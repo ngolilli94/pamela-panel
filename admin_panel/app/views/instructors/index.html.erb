@@ -9,6 +9,8 @@
         <% @instructors.order('last_name ASC').each do |instructor_info| %>
             <td> <%= instructor_info.last_name %> </td>
             <td> <%= instructor_info.first_name %> </td>
+            <% @cohort = Cohort.where(instructor_id:instructor_info.id) %>
+            <td> <%= @cohort.name %> </td>
         <% end %>
     </tr>
 </table>

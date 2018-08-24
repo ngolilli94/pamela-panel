@@ -6,12 +6,13 @@
         <th> Age </th>
         <th> Cohort </th>
     </tr>
-    <tr>
         <% @students.order('last_name ASC').each do |student_info| %>
+    <tr>
             <td> <%= student_info.last_name %> </td>
             <td> <%= student_info.first_name %> </td>
             <td> <%= student_info.age %> </td>
-            <td> <%= student_info.cohort_id %> <td>
+            <% @cohort = Cohort.find(student_info.cohort_id) %>
+            <td> <%= @cohort.name %> <td>
             <% end %>
     </tr>
 </table>

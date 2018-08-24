@@ -9,8 +9,8 @@
         <th> Student ID </th>
         <th> Name </th> 
     </tr>
-    <tr>
         <% @cohort_students.order('last_name ASC').each do |student_info| %>
+    <tr>
             <td> <%= student_info.id %>  </td>
             <td> <%= student_info.first_name %> <%= student_info.last_name %> </td>
         <% end %>
