@@ -9,6 +9,6 @@
         <% @instructors.order('last_name ASC').each do |instructor_info| %>
             <td> <%= instructor_info.last_name %> </td>
             <td> <%= instructor_info.first_name %> </td>
+        <% end %>
     </tr>
 </table>
-<% end %>
