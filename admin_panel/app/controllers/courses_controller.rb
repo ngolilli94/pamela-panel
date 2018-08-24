@@ -13,7 +13,9 @@ class CoursesController < ApplicationController
     end
 
     def create
-        Course.create(course_params) 
+        Course.create(course_params)
+
+        redirect_to :controller => 'courses', :action => 'index'
     end
 
     def edit
@@ -23,6 +25,8 @@ class CoursesController < ApplicationController
     def update
         @course = Course.find(params[:id])
         @course.update(course_params)
+
+        redirect_to :controller => 'courses', :action => 'show'
     end
 end
 

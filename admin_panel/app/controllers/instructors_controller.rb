@@ -13,7 +13,9 @@ class InstructorsController < ApplicationController
     end
 
     def create
-        Instructor.create(instructor_params)  
+        Instructor.create(instructor_params) 
+        
+        redirect_to :controller => 'instructors', :action => 'index'
     end
     
     def edit
@@ -23,6 +25,8 @@ class InstructorsController < ApplicationController
     def update
         @instructor = Instructor.find(params[:id])
         @instructor.update(instructor_params)
+
+        redirect_to :controller => 'instructors', :action => 'show'
     end
 end
 

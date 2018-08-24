@@ -5,8 +5,8 @@
         <th> Cohort </th>
         <th> Edit </th>
     </tr>
-    <tr>
         <% @instructors.order('last_name ASC').each do |instructor_info| %>
+        <tr>
             <td> <a href="/instructors/<%= instructor_info.id%>"><%= instructor_info.last_name %> <%= instructor_info.first_name %> </a></td>
             <% @cohort = Cohort.where(instructor_id:instructor_info.id) %>
             <td> <%= @cohort.name %> </td>
