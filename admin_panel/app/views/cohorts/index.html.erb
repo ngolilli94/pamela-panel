@@ -6,12 +6,14 @@
         <hr>
     </div>
     
-    <div>
+    <table>
     <% @course_cohorts = Cohort.where(course_id:@course.id) %>
     <% @course_cohorts.each do |each_cohort_info| %>
-        <span> <a href="/cohorts/<%= each_cohort_info.id%>"> <%= each_cohort_info.name %> </a> </span>
+    <tr>
+        <td> <a href="/cohorts/<%= each_cohort_info.id%>"> <%= each_cohort_info.name %> </a> </td>
         <% end %>
     <% @instructor = Instructor.find(cohort_element.instructor_id) %>
-        <span> <a href="/instructors/<%= cohort_element.instructor.id%>"> <%= @instructor.last_name %> </a> </span>
-    </div>
+        <td> <a href="/instructors/<%= cohort_element.instructor.id%>"> <%= @instructor.last_name %> </a> </td>
+    </tr>
+    </table>
 <% end %>
