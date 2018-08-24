@@ -1,15 +1,13 @@
 <h1>Student Roster</h1>
 <table>
     <tr>
-        <th> Last Name </th>
-        <th> First Name </th> 
+        <th> Name </th>
         <th> Age </th>
         <th> Cohort </th>
     </tr>
         <% @students.order('last_name ASC').each do |student_info| %>
     <tr>
-            <td> <%= student_info.last_name %> </td>
-            <td> <%= student_info.first_name %> </td>
+            <td> <a href="/students/<%= student_info.id%>"> <%= student_info.last_name %> <%= student_info.first_name %> </a> </td>
             <td> <%= student_info.age %> </td>
             <% @cohort = Cohort.find(student_info.cohort_id) %>
             <td> <%= @cohort.name %> <td>

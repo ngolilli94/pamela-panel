@@ -9,9 +9,9 @@
     <div>
     <% @course_cohorts = Cohort.where(course_id:@course.id) %>
     <% @course_cohorts.each do |each_cohort_info| %>
-        <span><%= each_cohort_info.name %></span>
+        <span> <a href="/cohorts/<%= each_cohort_info.id%>"> <%= each_cohort_info.name %> </a> </span>
         <% end %>
     <% @instructor = Instructor.find(cohort_element.instructor_id) %>
-        <span><%= @instructor.last_name %>
+        <span> <a href="/instructors/<%= cohort_element.instructor.id%>"> <%= @instructor.last_name %> </a> </span>
     </div>
 <% end %>
