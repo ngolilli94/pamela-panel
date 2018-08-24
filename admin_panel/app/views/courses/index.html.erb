@@ -1,0 +1,6 @@
+<div>
+<% @courses.order('id ASC').each do |course_info| %>
+    <h1> <%= course_info.name %> </h1>
+    <h3> Total Hours: <%= course_info.hours %> </h3>
+<% end %>
+</div>

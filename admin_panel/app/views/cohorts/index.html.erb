@@ -1,0 +1,17 @@
+<% @cohorts.each do |cohort_element| %>
+    <% @course = Course.find(cohort_element.course_id) %>
+    <div>
+        <h2> <%= @course.name %> </h2>
+        <h3> (<%= @course.hours %> hours) </h3>
+        <hr>
+    </div>
+    
+    <div>
+    <% @course_cohorts = Cohort.where(course_id:@course.id) %>
+    <% @course_cohorts.each do |each_cohort_info| %>
+        <span><%= each_cohort_info.name %></span>
+        <% end %>
+    <% @instructor = Instructor.find(cohort_element.instructor_id) %>
+        <span><%= @instructor.last_name %>
+    </div>
+<% end %>
