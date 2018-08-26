@@ -2,16 +2,22 @@
 <table>
     <tr>
         <th> Name </th> 
-        <th> Cohort </th>
+        <th> Cohort(s) </th>
         <th> Edit </th>
     </tr>
         <% @instructors.order('last_name ASC').each do |instructor_info| %>
+        
+            <% @instructor = Instructor.find(instructor_info.id) %>
+            <% @instructor_cohort = @instructor.cohorts %>
+        
+            <% @instructor_cohort.each do |cohort_info| %>  
         <tr>
             <td> <a href="/instructors/<%= instructor_info.id%>"><%= instructor_info.last_name %> <%= instructor_info.first_name %> </a></td>
-            <% @cohort = Cohort.where(instructor_id:instructor_info.id) %>
-            <td> <%= @cohort.name %> </td>
+            <td> <a href="/cohorts/<%= cohort_info.id%>"> <%= cohort_info.name %> </a> </td>
             <td> <button><a href="/instructors/<%= instructor_info.id %>/edit"><%= image_tag "icons8-edit-64.png" %></a></button></td>
         <% end %>
-    </tr>
+        </tr>
+        <% end %>
 </table>
 
+<button> <a href="/instructors/new"> <%= image_tag "icons8-plus-64.png" %> </a> </button>
