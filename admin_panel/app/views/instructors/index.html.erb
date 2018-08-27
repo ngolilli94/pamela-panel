@@ -13,12 +13,14 @@
 
             <% @instructor = Instructor.find(instructor_info.id) %>
             <% @instructor_cohort = @instructor.cohorts %>
-            <td>
+            
+            <td rowspan="<%= @cohort_amt.length %>">
             <% @instructor_cohort.each do |cohort_info| %>  
         
              <a href="/cohorts/<%= cohort_info.id%>"> <%= cohort_info.name %> </a> <br>
             <% end %>
             </td>
+            
             <td rowspan="<%= @cohort_amt.length %>"> <button><a href="/instructors/<%= instructor_info.id %>/edit"><%= image_tag "icons8-edit-64.png" %></a></button></td>
         
         </tr>
