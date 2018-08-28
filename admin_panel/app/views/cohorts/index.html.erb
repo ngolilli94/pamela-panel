@@ -1,11 +1,13 @@
 <div id="cohortContainer">
         <% @courses.each do |course_element| %>
             <div id="courseHeader">
-                <h2> <%= course_element.name %> </h2>
-                <h3> (<%= course_element.hours %> hours) </h3>
-                <hr>
+                <div><h2> <%= course_element.name %> </h2></div>
+                <div><h3> (<%= course_element.hours %> hours) </h3></div>
             </div>
-            <table>
+            <hr>
+            <table id="cohortTable">
+                <col width="150">
+                <col width="100">
                 <% @course_cohort = Cohort.where(course_id:course_element.id) %>
                 <% @course_cohort.each do |cohort_element| %>
                     <tr>
