@@ -1,26 +1,22 @@
 <div id="cohortContainer">
-    <div>
-        <div id="courseHeader">
-            <% @courses.each do |course_element| %>
+        <% @courses.each do |course_element| %>
+            <div id="courseHeader">
                 <h2> <%= course_element.name %> </h2>
                 <h3> (<%= course_element.hours %> hours) </h3>
                 <hr>
-        </div>
-        <table>
+            </div>
+            <table>
                 <% @course_cohort = Cohort.where(course_id:course_element.id) %>
                 <% @course_cohort.each do |cohort_element| %>
-                <tr>
-                    <td> <a href="/cohorts/<%= cohort_element.id %>"><%= cohort_element.name %> </a> </td>
-                
-                <% @instructor = Instructor.find(cohort_element.instructor_id) %>
-                <td> <a href="/instructors/<%= cohort_element.instructor.id %>"> <%= @instructor.last_name %> </a> </td>
+                    <tr>
+                        <td> <a href="/cohorts/<%= cohort_element.id %>"><%= cohort_element.name %> </a> </td>
+                        <% @instructor = Instructor.find(cohort_element.instructor_id) %>
+                        <td> <a href="/instructors/<%= cohort_element.instructor.id %>"> <%= @instructor.last_name %> </a> </td>
+                    </tr>
                 <% end %>
-                </tr>
-        </table>
-            <% end %>
-
-            <div class="floatButton">
-            <a href="/cohorts/new"> <%= image_tag "icons8-plus-64.png" %> </a>
-            </div>
+            </table>
+        <% end %>
+    <div class="floatButton">
+        <a href="/cohorts/new"> <%= image_tag "icons8-plus-64.png" %></a>
     </div>
 </div>
