@@ -4,5 +4,11 @@
 
     #individualCourse {
         background-color: #17448c; 
+        width: 18vw;
+        height: 18vw;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
     }
 }
