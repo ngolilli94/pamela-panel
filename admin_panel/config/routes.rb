@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :cohorts
   resources :instructors
   resources :students
+
+  root to: 'pages#home'
 end

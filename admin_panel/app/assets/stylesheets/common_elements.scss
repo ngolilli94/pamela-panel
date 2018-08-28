@@ -1,0 +1,9 @@
+$border: 3.1em solid lightgrey;
+$padding: 3em;
+
+.tabContentContainer {
+    border-left: $border;
+    border-right: $border;
+    border-bottom: $border;
+    padding: $padding;
+}
