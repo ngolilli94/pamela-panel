@@ -1,6 +1,8 @@
 #courseContainer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+    
 
     #individualCourse {
         background-color: #17448c; 
@@ -10,5 +12,7 @@
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
+        margin: 1.5em;
+        
     }
 }
