@@ -1,6 +1,6 @@
 <div id="studentContainer">
 <h1>Student Roster</h1>
-<table>
+<table id="studentRoster">
     <tr>
         <th> Name </th>
         <th> Age </th>
@@ -10,10 +10,13 @@
         <% @students.order('last_name ASC').each do |student_info| %>
     <tr>
             <td> <a href="/students/<%= student_info.id%>"> <%= student_info.last_name %> <%= student_info.first_name %> </a> </td>
+
             <td> <%= student_info.age %> </td>
+
             <% @cohort = Cohort.find(student_info.cohort_id) %>
-            <td> <%= @cohort.name %> <td>
-            <td> <button><a href="/students/<%= student_info.id %>/edit"><%= image_tag "icons8-edit-64.png" %></a></button> </td>
+            <td> <%= @cohort.name %> </td>
+
+            <td> <a href="/students/<%= student_info.id %>/edit"><%= image_tag "icons8-edit-64.png", :class => "tableButton" %></a> </td>
             <% end %>
     </tr>
 </table>
