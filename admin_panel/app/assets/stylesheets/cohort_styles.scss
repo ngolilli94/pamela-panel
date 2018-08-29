@@ -1,0 +1,13 @@
+#cohortContainer {
+    width: 80%;
+    margin-left: 5%;
+
+    #courseHeader {
+        display: flex;
+        justify-content: space-between;
+    };
+
+    #cohortTable {
+        width: 80%;
+    }
+}
