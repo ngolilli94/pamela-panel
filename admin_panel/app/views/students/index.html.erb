@@ -14,7 +14,7 @@
             <td> <%= student_info.age %> </td>
 
             <% @cohort = Cohort.find(student_info.cohort_id) %>
-            <td> <%= @cohort.name %> </td>
+            <td> <a href="/cohorts/<%= @cohort.id %>"> <%= @cohort.name %> </a> </td>
 
             <td> <a href="/students/<%= student_info.id %>/edit"><%= image_tag "icons8-edit-64.png", :class => "tableButton" %></a> </td>
             <% end %>
