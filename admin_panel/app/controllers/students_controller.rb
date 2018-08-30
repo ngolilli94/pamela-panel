@@ -27,11 +27,17 @@ class StudentsController < ApplicationController
         @student = Student.find(params[:id])
         @student.update(student_params)
 
-        redirect_to :controller => 'students', :action => 'show'
+        redirect_to :controller => 'students', :action => 'index'
+    end
+
+    def destroy
+        @student = Student.find(params[:id])
+        @student.destroy
+    end
+
+    private
+    def student_params
+        params.require(:student).permit(:first_name,:last_name,:age,:pic,:cohort_id)
     end
 end
 
-private
-def student_params
-    params.require(:student).permit(:first_name,:last_name,:age,:pic,:cohort_id)
-end

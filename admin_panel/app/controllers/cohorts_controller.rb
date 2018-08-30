@@ -32,9 +32,16 @@ class CohortsController < ApplicationController
 
         redirect_to :controller => 'cohorts', :action => 'show'
     end
+
+    def destroy
+        @cohort = Cohort.find(params[:id])
+        @cohort.destroy
+    end
+
+    private
+    def cohort_params
+        params.require(:cohort).permit(:name,:start_date,:end_date,:course_id,:instructor_id)
+    end
+
 end
 
-private
-def cohort_params
-    params.require(:cohort).permit(:name,:start_date,:end_date,:course_id,:instructor_id)
-end
