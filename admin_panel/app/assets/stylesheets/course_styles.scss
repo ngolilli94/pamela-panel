@@ -5,7 +5,7 @@
     
 
     #individualCourse {
-        background-color: #17448c; 
+        background-color: #49a6f1; 
         width: 18vw;
         height: 18vw;
         display: flex;
@@ -13,6 +13,12 @@
         justify-content: center;
         align-items: center;
         margin: 1.5em;
+        border-radius: 15px;
+
+        #courseEdit {
+            width: 100%;
+            text-align: center;
+        }
         
     }
 }
