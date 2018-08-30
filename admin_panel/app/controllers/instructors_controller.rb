@@ -30,6 +30,11 @@ class InstructorsController < ApplicationController
         redirect_to :controller => 'instructors', :action => 'show'
     end
 
+    def destroy
+        @instructor = Instructor.find(params[:id])
+        @instructor.destroy
+      end
+
     private
     def instructor_params
         params.require(:instructor).permit(:first_name,:last_name,:age,:salary,:education, :pic)
