@@ -11,3 +11,19 @@ $padding: 3em;
 .tableButton {
     width: 10%;
 }
+
+form {
+    display: table;
+
+    .field {
+        display: table-row;
+
+        label {
+            display: table-cell;
+        }
+
+        input {
+            display: table-cell;
+        }
+    }
+}
