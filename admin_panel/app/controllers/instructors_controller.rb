@@ -27,7 +27,7 @@ class InstructorsController < ApplicationController
         @instructor = Instructor.find(params[:id])
         @instructor.update(instructor_params)
 
-        redirect_to :controller => 'instructors', :action => 'show'
+        redirect_to :controller => 'instructors', :action => 'index'
     end
 
     def destroy
