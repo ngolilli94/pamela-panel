@@ -16,10 +16,14 @@
             <label> Photo: </label>
             <%= form.text_field :pic %> 
         </div>
-        <div class="field"> 
-            <label> Cohort ID: </label>
-            <%= form.number_field :cohort_id %> 
-        </div>
+        <<div class="field"> 
+        <label> Cohort: </label>
+        <%= form.select(:cohort_id) do %>
+            <% @cohorts.order('name ASC').each do |cohort_select| %>
+              <%= content_tag(:option, cohort_select.name, value: cohort_select.id) %>
+            <% end %>
+        <% end %>
+    </div>
         <div class="field"> 
             <%= form.submit %> 
         </div>

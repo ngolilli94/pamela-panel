@@ -9,7 +9,7 @@
 
         </tr>
             <% @instructors.order('last_name ASC').each do |instructor_info| %>
-                <tr id="instructor-<%= instructor_info.id %>">
+            <tr id="instructor-<%= instructor_info.id %>">
                 <% @cohort_amt = Cohort.where(instructor_id: instructor_info.id) %>
                 
                 <td rowspan="<%= @cohort_amt.length %>"> <a href="/instructors/<%= instructor_info.id%>"><%= instructor_info.last_name %> <%= instructor_info.first_name %> </a></td>
