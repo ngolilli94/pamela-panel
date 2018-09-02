@@ -16,7 +16,7 @@
             <label> Course: </label>
             <%= form.select(:course_id) do %>
                 <% @courses.order('name ASC').each do |course_select| %>
-                  <%= content_tag(:option, course_select.name, value: course_select.id) %>
+                  <%= content_tag(:option, course_select.name, value: course_select.id, prompt: "Select a course") %>
                 <% end %>
             <% end %>
         </div>
