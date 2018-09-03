@@ -19,8 +19,14 @@
             text-align: center;
         }
     }
-}
+}       
 
-#courseTable {
-    width: 100%;
+#individualCourseContainer {
+    #courseHeader {
+        width: 95%;
+    }
+
+    #courseTable {
+        width: 100%;
+    } 
 }

@@ -1,7 +1,9 @@
 <div id="individualCourseContainer">
-    <h1> <%= @course.name %> </h1>
-    <h3> (<%= @course.hours %> hours) </h3>
-    <hr>
+    <div id="courseHeader">
+        <h1> <%= @course.name %> </h1>
+        <h3> (<%= @course.hours %> hours) </h3>
+        <hr>
+    </div>
 
     <table id="courseTable">
     <% @course_cohorts.each do |cohort_info| %>

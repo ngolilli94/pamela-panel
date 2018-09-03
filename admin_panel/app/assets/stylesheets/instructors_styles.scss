@@ -26,5 +26,11 @@
     };
 };
 
-    
+#individualInstructorContainer {
+    display: flex;
+    justify-content: space-between;
 
+    #instructorPic img {
+        max-width: 25vw;
+    };    
+};
