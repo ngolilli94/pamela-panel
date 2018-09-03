@@ -1,10 +1,16 @@
-$border: 3.1em solid lightgrey;
+$margin: 3.1em;
 $padding: 3em;
+$corner: 12px;
+
+body {
+    background-image: url(classroom_background.jpg);
+    background-size: cover;
+}
 
 .tabContentContainer {
-    border-left: $border;
-    border-right: $border;
-    border-bottom: $border;
+    background-color: #ffffffbf;
+    border-radius: 0 $corner $corner $corner;
+    margin: 0 $margin $margin $margin;
     padding: $padding;
 }
 
