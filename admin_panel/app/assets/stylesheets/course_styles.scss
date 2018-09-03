@@ -17,32 +17,16 @@
         #courseEdit {
             width: 100%;
             text-align: center;
-        };        
-    };
-};
+        }
+    }
+}       
 
 #individualCourseContainer {
     #courseHeader {
         width: 95%;
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-    };
+    }
 
-    #courseCohorts {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;   
-        
-        #individualCourseCohorts {
-        width: 15vw;
-        height: 12vw;
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 1em;
-        border: 1px solid black;
-        }
-    };
+    #courseTable {
+        width: 100%;
+    } 
 }
