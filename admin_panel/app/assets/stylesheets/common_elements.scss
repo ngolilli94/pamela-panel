@@ -13,6 +13,14 @@ body {
     background-image: url(welcome_background.png);
     background-size: cover;
     background-repeat: no-repeat;
+
+    h1 {
+        font-family: 'Tangerine', cursive;
+    }
+
+    h1, h3, p {
+        text-align: center;
+    }
 }
 
 nav {
@@ -20,7 +28,12 @@ nav {
     background-color: #7B6D8DB3;
     margin-top: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+
+    #logo {
+        width: 30%;
+        height: auto;
+    }
 }
 
 .tabContentContainer {
@@ -49,3 +62,4 @@ form {
         }
     }
 }
+
