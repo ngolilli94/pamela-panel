@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AdminPanel</title>
+    <title>AT Academy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,7 +15,7 @@
     <% if admin_signed_in? %>
       <nav>
         <span> Welcome <%= current_admin.email %> </span>
-        <span> <a href="/admins/sign_out"> Sign Out </a> <span>
+        <span> <%= link_to "Sign Out", destroy_admin_session_path, :method => :delete %> <span>
       </nav>
     <% else %>
       <nav>
