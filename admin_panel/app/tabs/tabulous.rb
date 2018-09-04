@@ -34,6 +34,13 @@ Tabulous.setup do
       active_when   { in_action('any').of_controller('students') }
     end
 
+    settings_tab do
+      text          { 'Account Settings' }
+      link_path     { edit_admin_registration_path }
+      visible_when  { true }
+      enabled_when  { true }
+      active_when   { in_action('any').of_controller('devise/registrations') }
+    end
   end
 
   customize do
